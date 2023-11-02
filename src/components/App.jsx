@@ -24,7 +24,7 @@ export const App = () => {
   }, [contacts]);
 
   const handleChange = e => {
-    const { name, value } = e.currentTarget;
+    const { value } = e.currentTarget;
     setFilter(value);
   };
 
