@@ -37,8 +37,7 @@ export const App = () => {
       alert(`${newContact.name} is already in contacts!`);
       return;
     }
-
-    setContacts([...contacts, newContact]);
+    setContacts(prevState => [...prevState, newContact]);
   };
 
   const filterElements = contacts => {
@@ -48,7 +47,7 @@ export const App = () => {
   };
 
   const handleDeleteProduct = id => {
-    setContacts(contacts.filter(contact => contact.id !== id));
+    setContacts(prevState => prevState.filter(contact => contact.id !== id));
   };
 
   const filteredContacts = filterElements(contacts);
